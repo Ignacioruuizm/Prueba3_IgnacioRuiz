@@ -1,0 +1,61 @@
+/* Estilos para el formulario de contacto */
+
+.contact-form {
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrar el formulario horizontalmente */
+    padding: 2rem; /* Espaciado interno del formulario */
+    background-color: #fff; /* Color de fondo */
+    border-radius: 8px; /* Borde redondeado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.contact-form h2 {
+    margin-bottom: 1.5rem; /* Espaciado inferior del encabezado */
+    color: #333; /* Color del texto */
+    font-size: 2rem; /* Tamaño de fuente del encabezado */
+    font-weight: 600; /* Peso de la fuente */
+    text-align: center; /* Alinear el encabezado al centro */
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem; /* Espaciado inferior entre grupos de formulario */
+}
+
+.contact-form label {
+    display: block; /* Mostrar etiquetas como bloques */
+    margin-bottom: 0.5rem; /* Espaciado inferior de etiquetas */
+    color: #555; /* Color del texto de etiquetas */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Ancho completo */
+    padding: 0.75rem; /* Relleno interno */
+    font-size: 1rem; /* Tamaño de fuente */
+    border: 1px solid #ddd; /* Borde */
+    border-radius: 4px; /* Borde redondeado */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Transiciones */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff; /* Color del borde al enfocar */
+    outline: none; /* Sin contorno */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra al enfocar */
+}
+
+.contact-form .btn-primary {
+    width: 100%; /* Ancho completo del botón */
+    padding: 0.75rem; /* Relleno interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Borde redondeado */
+    background-color: #007bff; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    font-size: 1rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor */
+    transition: background-color 0.3s; /* Transición del color de fondo */
+}
+
+.contact-form .btn-primary:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}

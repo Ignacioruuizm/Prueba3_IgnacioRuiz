@@ -1,0 +1,234 @@
+:root {
+    --color-oscuro: #222222;
+    --color-darkdos: #131313;
+    --amarillo: #F8B42F;
+    --amarillodos: #F4AD21;
+    --blanco: #fff;
+    --colorfoo: #23272B;
+}
+/*Generales*/
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--color-oscuro);
+    background: url("../images/body.jpg") repeat-y;
+}
+h1, h5 {
+    font-weight: 700;
+}
+h2{
+    font-weight: 600;
+}
+/*Header y Navegacion*/
+.df-l{
+    color: var(--color-oscuro);
+    font-weight: 600;
+}
+.df-l:hover{
+    text-decoration: none;
+    color: var(--amarillo);
+}
+.navbar-dark .navbar-nav .nav-link{
+    color: var(--blanco);
+    font-weight: 700;
+    font-size: 0.75rem;
+}
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: rgb(249, 181, 48);
+}
+.tit-header{
+    font-size: 4.5em;
+    color: var(--color-darkdos);
+    padding-bottom: 0.25em;
+}
+.bg-hero{
+    background: url("../images/imagenv5.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:left;
+    padding-bottom: 5rem;
+    padding-top: 3rem;
+    margin-top: 3rem;
+}
+/*Contenido o Body*/
+.txt-late{
+    font-weight: 300;
+    font-size: 0.95rem;
+}
+.hola{
+    color: var(--amarillo);
+    letter-spacing: 0.188em;
+    font-size: 0.75rem;
+}
+.hola.bajada{
+    color: var(--color-oscuro);
+    line-height: 1.563em;
+    text-transform: uppercase;
+}
+.carousel-indicators {
+    top: 6.25em;
+}
+.carousel-indicators li {
+    background-color: var(--amarillodos);
+}
+.linda{
+    width: 100%;
+}
+.anio {
+    background: rgba(19, 19, 19, 0.18);
+    padding: 5px 15px;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-oscuro);
+}
+.labor{
+    font-weight: 600;
+    color: var(--amarillodos);
+}
+.cont-iconos {
+    background-color: var(--blanco);
+    box-shadow: 0px 10px 30px 0px rgba(43, 43, 43, 0.2);
+    text-align: center;
+    padding: 0.938em 0.313em 1.563em;
+    border-radius: 0.938em;
+    font-size: 0.75rem;
+}
+.icono{
+    background-color: var(--color-oscuro);
+    border-radius: 50%;
+    width: 40%;
+    margin: 0 auto;
+}
+.bg-form{
+    background-color: var(--color-darkdos);
+}
+.modal-title {
+    color: var(--amarillo);
+}
+.modal-header {
+    border-bottom: 0.063em solid #F9B530;
+}
+.modal-footer {
+    border-top: 0.063em solid #F9B530;
+}
+/*Footer*/
+footer{
+    background-color: var(--colorfoo);
+}
+.txt-footer{
+    font-weight: 300;
+}
+.logo-footer{
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    max-width: 16.5em;
+}
+.border-footer{
+    border-top: 1px solid #A09F9F;
+    width: 80%;
+    margin: 1.25em auto;
+}
+
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+
+#contacto {
+    padding: 100px 15px;
+    background-color: #f3f3f3;
+}
+
+#contacto .titulo-seccion {
+    margin-bottom: 20px;
+}
+
+#contacto .contenedor-form {
+    max-width: 1100px;
+    margin: auto;
+}
+
+#contacto .contenedor-form .fila {
+    margin-bottom: 15px;
+}
+
+#contacto .contenedor-form .mitad {
+    display: flex;
+    justify-content: space-between;
+}
+
+#contacto .contenedor-form input,
+#contacto .contenedor-form textarea {
+    padding: 20px;
+    border-radius: 20px;
+    border: none;
+    border: 1px solid #919191;
+}
+
+#contacto .contenedor-form .mitad input {
+    width: 48%;
+}
+
+#contacto .contenedor-form .input-full {
+    width: 100%;
+}
+
+#contacto .titulo-seccion {
+    text-align: center;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #111135;
+    text-decoration: underline;
+    text-decoration-color: #d3d3d3;
+    text-decoration-thickness: 5px;
+}
+
+#contacto .btn-enviar {
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    transition: .5s;
+    padding: 10px 15px !important;
+}
+
+#contacto .btn-enviar:hover {
+    background-color: #ff5080;
+    color: #fff;
+}
+* {
+	margin:0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+.portfolio-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.weather-section {
+    margin-top: 20px;
+}
+
+.weather-info p {
+    margin: 5px 0;
+}
+
+.weather-info span {
+    font-weight: bold;
+    color: #007bff;
+}

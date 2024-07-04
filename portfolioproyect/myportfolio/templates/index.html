@@ -1,0 +1,418 @@
+{% load bootstrap5 %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Portafolio Ignacio Ruiz</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--CSS de Bootstrap 4.2.1-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <!--Google Fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <!--Animaciones-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <!--Style-->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-rimMVGDbkXQt6LAMHZ46rB2sZCiRT1s5K6l1sLeQX7R3kA04t9W3f9Z5vbBiEw3E" crossorigin="anonymous">
+    </head>
+<body>
+    <!--Navegacion-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div  class="container">
+          <a class="navbar-brand" href="">
+            <img src="./static/images/portafoliodef.png"></a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto text-center text-uppercase">
+              <li class="nav-item">
+                <a class="nav-link" href="#inicio">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#sobremi">Sobre Mi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#projects">Mis Trabajos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#habilidades">Habilidades</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contacto">Contáctame</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <!--Header-->
+    <header id="inicio" class="bg-hero">
+        <div class="container my-5">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="hola text-uppercase animate__animated animate__fadeInDown">¡Hola! mi nombre es Ignacio Ruiz</h5>
+                <h1 class="tit-header  animate__animated animate__fadeInLeft">PORTAFOLIO PERSONAL </h1>
+                <p class="animate__animated animate__fadeInDown"> <a class="df-l" href="" target="_blank">  ¡DESARROLLADOR WEB!</p>
+                <a class="btn btn-warning rounded-pill my-2y"  href="#mistrabajos" role="button" aria-expanded="false">Mis Trabajos</a>
+                <a class="btn btn-dark rounded-pill my-2"  href="" target="_blank" role="button">Descarga mi CV</a>
+              </div>
+            </div>
+        </div>
+    </header>
+    <!--Sobre mi-->
+    <section id="sobremi" class="text-center py-5 d-none d-md-block">
+        <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <img src="./static/images/imagenboostrapjshtml.png" class="linda animate__animated animate__fadeInUp animate__delay-1s">
+              </div>
+                <div class="col-sm-6 animate__animated animate__fadeInRight animate__delay-2s">
+                    <h2 class="text-left">Sobre Mi</h2>
+                    <p class="py-3 text-justify txt-late">Soy estudiante de segundo año de Ingeniería en Informática en Duoc UC. Estoy adquiriendo conocimientos y 
+                      habilidades en diversas áreas del desarrollo y la tecnología.  </p>
+                    <div class="row">
+                      <div class="col-sm-6">
+                          <p class="text-left">Mi formación se centra en el desarrollo de software, bases de datos y redes. Además, me he familiarizado con lenguajes de programación, </p>
+                      </div>
+                      <div class="col-sm-6">
+                          <p class="text-left">
+                            Metodologías de desarrollo ágil y herramientas de gestión de proyectos. Con el objetivo de prepararme para enfrentar los desafíos del sector tecnológico y contribuir a proyectos innovadores.
+                          </p>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+       <!-- Mis proyetos -->
+
+   <section id="projects" class="text-center py-3">
+
+    <div class="container">
+      <h2 class="text-center">Mis Trabajos</h2>
+      <h5 class="hola bajada pb-3">Estos son algunos pequeños trabajos que he realizado de HTML Y CSS</h5>
+      <div class="row">
+
+        {% for proyecto in proyectos %}
+
+        <div class="col-md-4">
+
+          <div class="card mb-4">
+
+            <img src="{{ proyecto.imagen.url }}" class="card-img-top" alt="{{ proyecto.titulo }}">
+
+            <div class="card-body">
+
+              <h5 class="card-title">{{ proyecto.titulo }}</h5>
+
+              <p class="card-text">{{ proyecto.descripcion }}</p>
+
+              <a href="{{ proyecto.link_sitio }}" class="btn btn-primary" target="_blank">Web</a>
+
+              <a href="{{ proyecto.link_repositorio }}" class="btn btn-secondary" target="_blank">Repositorio</a>
+
+              <a href="{% url 'proyecto_detalle' proyecto.pk %}" class="btn btn-info">Ver Detalle</a> 
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+  </section>
+
+    <!--API CLIMA-->
+    <div class="modal fade" id="modal-happy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">API Clima 7 dias</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Conexión de API openweather del clima de los proximos 7 dias en puerto montt.</p>
+            <a href="{% url 'clima' %}" target="_blank" class="df-l">Ir a sitio web</a>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Taller-->
+    <div class="modal fade" id="modal-hyundai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Taller Makqueen</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Se creo una página web para clientes de un taller. Eran un grupo de recién egresados en mecánica automotriz que fundamos un taller único. 
+              Ofrecen servicios completos y de alta calidad para vehículos a gasolina y diésel, 
+              destacando en un mercado saturado e innovando continuamente para atraer y satisfacer a sus clientes.</p>
+            <a href="{% url 'taller' %}" target="_blank" class="df-l">Ir a sitio web</a>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Portafolio-->
+    <div class="modal fade" id="modal-ams" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Portafolio Personal</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Creé un portafolio personal en HTML y CSS para mostrar mis habilidades y proyectos. Soy un estudiante de ingeniería en informática. 
+              Este portafolio destaca mis conocimientos especializados y experiencia en diferentes áreas. A través de un diseño limpio y profesional, 
+              busco atraer oportunidades laborales y colaborar en proyectos innovadores en el sector del desarrollo web. </p>
+              <a href="{% url 'home' %}" target="_blank" class="df-l">Ir a sitio web</a>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Habilidades-->
+    <section id="habilidades" class="pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h2 class="text-center">Habilidades</h2>
+            <p>Algunas de mis aptitudes que he adquirido a lo largo de mi experiencia </p>
+            <h6 class="progress-label">HTML</h6>
+            <div class="progress mb-3">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="90">90%</div>
+            </div>
+            <h6 class="progress-label">CSS</h6>
+            <div class="progress mb-3">
+              <div class="progress-bar bg-dark" role="progressbar" style="width: 95%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">95%</div>
+            </div>
+            <h6 class="progress-label">Bootstrap</h6>
+            <div class="progress mb-3">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 80%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">80%</div>
+            </div>
+            <h6 class="progress-label">Javascript
+            <div class="progress mb-3">
+              <div class="progress-bar bg-dark" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+            </div>
+            <h6 class="progress-label">Python</h6>
+            <div class="progress mb-3">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 95%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">95%</div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6 my-5">
+            <div class="row mb-4">
+              <div class="col-sm-4">
+                <div class="cont-iconos">
+                  <div class="" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="UX Research">
+                    <i class="far fa-file-alt fa-2x py-2 my-2"></i>
+                  </div>
+                  <p class="pt-3">Base de datos</p>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="cont-iconos">
+                  <div class=""  data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="Wireframes">
+                    <i class="far fa-images fa-2x py-2 my-2"></i>
+                  </div>
+                  <p class="pt-3">Wireframes</p>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="cont-iconos">
+                  <div class="" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="Look&Feel">
+                    <i class="fas fa-palette fa-2x py-2 my-2"></i>
+                  </div>
+                  <p class="pt-3">Look & Feel</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="cont-iconos">
+                  <div class="" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="Desarrollo Web">
+                    <i class="far fa-file-code fa-2x  py-2 my-2"></i>
+                  </div>
+                  <p class="pt-3">Desarrollo Web</p>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="cont-iconos">
+                  <div class="" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="Diseño Gráfico">
+                    <i class="fas fa-pen-nib fa-2x py-2 my-2"></i>
+                  </div>
+                  <p class="pt-3">Diseño Gráfico</p>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="cont-iconos">
+                  <div class=""  data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="Email Marketing">
+                    <i class="far fa-envelope fa-2x py-2 my-2"></i>
+                  </div>
+                  <p class="pt-3">Javascripts</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Alerta-->
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="hobbies" class="bg-destacar text-center">
+      <div class="container my-5 py-3">
+          <div class="row">
+            <div class="col-12">
+              <h2>Intereses</h2>
+              <h5 class="hola bajada pb-3">Algunos de mis hobbies y cosas que me gustan hacer en mis tiempos libres!</h5>
+            </div>
+            <div class="col-12 rounded pt-4 pb-5">
+              <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#blogCarousel" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active text-center">
+                    <div class="row">
+                      <div class="col-4">
+                        <i class="fas fa-table-tennis fa-4x"></i>
+                        <p class="text-uppercase hola font-weight-bold py-2">Deportes</p>
+                     </div>
+                      <div class="col-4">
+                        <i class="fas fa-graduation-cap fa-4x"></i>
+                        <p class="text-uppercase hola font-weight-bold py-2">Estudiar</p>
+                      </div>
+                      <div class="col-4">
+                        <i class="fas fa-music fa-4x"></i>
+                        <p class="text-uppercase hola font-weight-bold py-2">Escuchar musica</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item text-center">
+                    <div class="row">
+                      <div class="col-4">
+                        <i class="fas fa-utensils fa-4x"></i>
+                        <p class="text-uppercase hola font-weight-bold py-2">Comer</p>
+                        </div>
+                      <div class="col-4">
+                        <i class="fab fa-discord fa-4x"></i>
+                        <p class="text-uppercase hola font-weight-bold py-2">Hablar en discord con amigos</p>
+                      </div>
+                      <div class="col-4">
+                        <i class="fas fa-users fa-4x"></i>
+                        <p class="text-uppercase hola font-weight-bold py-2">Conocer gente</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+     
+    <!--Contacto-->
+    <section id="contacto" class="py-5 bg-light">
+      <div class="contenedor-form">
+        <h3 class="titulo-seccion">CONTACTAME</h3>
+        <form method="POST" action="{% url 'contacto_nuevo' %}" class="needs-validation" novalidate>
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_nombre" class="form-label">Nombre</label>
+                <input type="text" placeholder="Nombre Completo *" class="form-control" id="id_nombre" name="nombre" required>
+                <div class="invalid-feedback"> Por favor ingresar un mensaje.</div>
+            </div>
+            <div class="mb-3">
+              <label for="id_email" class="form-label">Correo</label>
+              <input type="email" placeholder="Dirección de Email" class="form-control" id="id_email" name="email" required>
+              <div class="invalid-feedback"> Por favor ingresar un correo.</div>
+            </div>
+            <div class="mb-3">
+              <label for="id_mensaje" class="form-label">Mensaje</label>
+              <textarea class="form-control"  id="id_mensaje" name="mensaje" cols="30" rows="10"  placeholder="Tu Mensaje..."  requerid></textarea>
+              <div class="invalid-feedback"> Por favor ingresar un mensaje.</div>
+            </div>
+            <input type="submit" value="Enviar Mensaje" class="btn-enviar">
+    </section>  
+
+  
+
+    <!--footer-->
+    <footer class="py-5 text-sm-center">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4">
+            <a href="#inicio"><img src="" class="logo-footer"></a>
+          </div>
+          <div class="col-sm-4">
+            <h5 class="pb-3 hola">Email: ignacioruizmd@gmail.com</h5>
+            <h5 class="pb-3 hola">Teléfono: +56 9 96704600</h5>
+            <h5 class="pb-3 hola">Ciudad: Puerto Montt</h5>
+          </div>
+          <div class="col-sm-4">
+            <a class="text-white pr-3" href="https://www.instagram.com/nachoooooj/?hl=es-la" target="_blank"><i class="fab fa-instagram fa-2x pr-5 pr-sm-1"></i></a>
+            <a class="text-white pr-3" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f fa-2x pr-5 pr-sm-1"></i></a>
+            <a class="text-white pr-3" href="https://www.linkedin.com/home/" target="_blank"><i class="fab fa-linkedin-in fa-2x pr-5 pr-sm-1"></i></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="border-footer"></div>
+            <p class="text-white">Todos los derechos reservados - 2024</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    {% bootstrap_javascript %}
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

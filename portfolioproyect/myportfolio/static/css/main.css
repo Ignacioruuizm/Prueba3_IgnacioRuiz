@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Teko&display=swap');
+.sec-title{
+  font-size: calc(2rem + .5vw);
+  padding-bottom: 2rem;
+  text-align: center;
+}
+.title-line{
+  background-color: #ce7b29;
+  border: none;
+  height: .25rem;
+  margin-bottom: 2rem;
+  width: 3rem;
+}
+
+
+
+.navbar {
+  background-color: rgb(0, 0, 0); 
+}
+
+
+.nav-link,
+.navbar-brand {
+  color: rgb(255, 255, 255); 
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links a:hover {
+  background-color: gray;
+  color: #ffffff;
+}
+
+
+.nav-links a.active {
+  background-color: gray;
+  color: #100f0f;
+}
+
+.nav-link,
+.navbar-brand {
+  font-size: 28px;
+}
+
+.nav-links :hover{
+  background-color: gray!important;
+  cursor: pointer;
+  color:#100f0f;
+}
+
+.nav-links li {
+  margin-right: 10px;
+}
+
+.nav-links li:last-child {
+  margin-right: 0;
+}
+
+.logo-nav{
+  cursor: pointer;
+}
+
+.imagen-cambiar-tamaño {
+  width: 100px;
+  height: auto; 
+
+  transition: width 0.3s, height 0.3s;
+}
+
+.imagen-cambiar-tamaño:hover {
+  width: 120px;
+}
+
+/* Estilos de la portada de la web*/
+.portada{
+  background-image: url("/static/images/auto.jpg");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 100%, 100% 85%, 100% 0, 0 0);
+  height: 1000px;
+  width: 100%;
+}
+
+
+/* Estilos de la barra de los valores.*/
+.cards3{
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem auto;
+  max-width: 1200px;
+  width: 95%;
+}
+  .cards3 .elem{
+    display: flex;
+    max-width: 350px;
+    width: 30%;
+  }
+    .cards3 .elem h3{
+      font-size: calc(1rem + 0.8vw);
+      text-align: center;
+    } 
+    .cards3 .elem p{
+      font-size: calc(.8rem + .3vw);
+      padding: 0 1rem;
+    } 
+    .cards3 .elem .icon{
+      background-color: #DADADA;
+      border-radius: .5rem;
+      font-size: 2.5rem;
+      padding: 1rem 1.2rem;
+    }
+      .cards3 .elem .icon:hover{
+        background-color: #c01010;
+        color: white;
+      }
+
+
+/* Estilos de la franja de turno.*/
+#back-turn {
+  background-color: #252525;
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);
+  display: block;
+  padding: 3rem;
+  text-align: end;
+  text-decoration: none;
+}
+  #back-turn span{
+    border: solid 2px rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    font-size: calc(1.3rem + .6vw);
+    padding: .5rem 1.5rem;
+  }
+    #back-turn span:hover{
+      border-color: #E9650D;
+      color:#E9650D;
+    }
+
+
+
+/* Barra para dejar comentario */
+#bar-leave-comment {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+  #bar-leave-comment p{
+    font-size: calc(1rem + .8vw);
+    margin-right: 2rem;
+  }
+  #bar-leave-comment a{
+    border: solid .15rem white;
+    color: white;
+    font-size: calc(1rem + .8vw);
+    padding: .5rem 1.2rem;
+    text-decoration: none;
+  }
+
+
+*{
+  font-family: 'Teko', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Estilos para todas las secciones. */
+.bg-orange     {background-color: rgba(164, 25, 25, 0.6);}
+.bg-black      {background-color: rgba(170, 56, 56, 0.9); color: rgb(179, 0, 0);}
+.bg-gray       {background-color: #000000;}
+.bg-gris       {background-color: #981c1c;}
+.bg-ligthgray  {background-color:#ffffff;}
+.bg-rojito     {background-color: #252525;}
+
+.ml-1 {margin-left: 1rem;}
+.mr-1 {margin-right: 1rem;}
+
+.d-flex{
+  align-items: center;
+  display: flex;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+
+
+
+/* Estilos del pie de página. */
+footer{
+  color: white;
+  padding: 1rem 0 1rem 0; 
+}
+  footer .copy{
+    border-top: 0.1rem solid transparent;
+    border-image: linear-gradient(90deg, rgba(63,64,64,1) 0%, rgba(255,255,255,0.5), rgba(63,64,64,1) 100%) 1;        
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(0.4rem + 0.15vw);
+    padding-top: 0.5rem; 
+    text-align: center;
+  }
+  footer .f-info{
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1200px;
+    width: 100%;
+  }
+    footer .f-info p{
+      font-size: calc(1rem + 0.6vw);
+      text-align: center;
+    }
+    footer .f-info .g-rs{
+      display: flex;
+      justify-content: center;
+    }
+      footer .f-info .g-rs .f-red{
+        border: solid 0.2rem white;
+        margin: 1rem 0.6rem;
+        padding: 0.6rem;
+      }
+        footer .f-info .g-rs .f-red:hover{
+          transform: scale(1.1);
+        }
+        footer .f-info .g-rs .f-red img{
+          vertical-align: middle;
+          width: 1rem;
+        }
+        .nav-link{
+          color: #1a1a1a;
+          margin-right: 15px;
+      
+      }
+      .nav-link:hover{
+          color: #1a1a1a;
+      }
+      .bg-dark{
+          min-height:50px;
+      }
+      .logo-empresa{
+          min-width: 100px;
+          max-width: 120px;
+          margin-left: 60px;
+      }
+      .navbar-toggler {
+          font-size: 40px;
+      }
+      .navbar-toggler:focus{
+          outline: none;
+      }
+      
+      .slide{
+          margin-top: 10px;
+      }
+      
+      .slide img{
+          height: 70vh;
+      }
+      
+      .small-carousel {
+          max-width: 850px; /* Define el ancho máximo del carousel */
+          margin: 0 auto;
+          ; /* Centra el carousel en la página */
+      
+      }
+      
+      .carousel-item img {
+          height: 40vh; /* Ajusta la altura de las imágenes */
+      }
+      
+      .carousel-title {
+          font-size: 1rem; /* Ajusta el tamaño de la fuente del título */
+      }
+      
+      .carousel-text {
+          font-size: 0.8rem; /* Ajusta el tamaño de la fuente del texto */
+      }
+
+
